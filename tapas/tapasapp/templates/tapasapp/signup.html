@@ -1,0 +1,48 @@
+{% extends 'tapasapp/base.html' %}
+
+{% block content %}
+
+<div style="display: flex; justify-content: center; margin-top: 50px;">
+    <div style="width: 500px;">
+        <div class="card" style="border: 1px solid #ccc;">
+
+            <div class="card-header" style="background-color: #f8e7e7;">
+                <h3 class="mb-0 p-2 title-brown">Sign Up</h3>
+            </div>
+
+            <div class="card-body">
+
+                {% if error %}
+                <p class="error-message">{{ error }}</p>
+                {% endif %}
+
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label class="form-label">Username:</label>
+                        <input type="text" name="username" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Password:</label>
+                        <input type="password" name="password" class="form-control">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        Create Account
+                    </button>
+
+                    <a href="{% url 'login' %}" class="btn btn-secondary">
+                        Back
+                    </a>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

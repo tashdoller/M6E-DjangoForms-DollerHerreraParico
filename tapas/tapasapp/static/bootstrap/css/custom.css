@@ -3,3 +3,15 @@
     text-align: center;
     background-color: black;
 }
+
+.error-message {
+    color: red;
+}
+
+.success-message {
+    color: green;
+}
+
+.title-brown {
+    color: #26160a; /* dark brown */
+}
